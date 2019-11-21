@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Adam Katz and Bryant Huang; PEO2_gr22_Ex1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/myjs.js"></script>
+    <script src="js/jquery-ui.js"></script>
+</head>
+<body class="body" style = "width: 100vw">
+<div id="nonreg">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                <h2>PlanIt</h2>
+            </div>
+            <div class="col-sm" style= "float: right">
+                <button onclick= "directToLogIn()" style= "float: right">Log In</button>
+                <button onclick="directToSignUp()" style= "float: right">Sign Up</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class="col-sm" style= "height: 50vh; width: 50vw; border: black solid 1px">
+                Left
+            </div>
+            <div class="col-sm" style= "height: 50vh; width: 50vw; border: black solid 1px">
+                Right
+            </div>
+        </div>
+    </div>
+    <button onclick ="directToMain()">Go to Main</button>
+</div>
+<div id="sign_up_screen" style = "display : none">
+    <div class="body_logged_out" style="height: fit-content">
+    <form name= "signup">
+        <h5>Account Information</h5>
+        Username:<br>
+        <input type="text" name="username" required>
+        <br>
+        Password:<br>
+        <input type="password" name="password" pattern="^[A-Za-z0-9]{1,8}"  required title="8 characters
+                       ' maximum, no special characters">
+        <br><br>
+        <h5>Personal Information</h5>
+        'Name and Surname<br>
+        <input type="text" name="name" required>
+        <br>
+        Email<br>
+        <input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        title="name@domain.extension">
+        <br>Date of Birth<br>
+        <input type="text" name="birthday" placeholder="dd/mm/yyyy" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" required title = "dd/mm/yyyy">
+        <br><br>
+        <div>
+            <br>
+            <div>
+                <p><input type="checkbox" name="terms" required> I accept the <u>Terms and Conditions</u></p>
+                <button class="save_new_user" id="save_new_user">Save</button>
+                <button class="delete">Delete</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+<div id = "log_in_screen" style = "display : none">
+    <div class="body_logged_out">
+    <form>
+        <h5>Login</h5>
+        Email<br>
+        <input type="text" name="email">
+        <br>
+        Password:<br>
+        <input type="text" name="password">
+        <br><br>
+        <button class="login" id="login" type="submit">Log In</button>
+        </form>
+    </div>;
+</div>
+<div id="main_profile" style = "display : none">
+    <div id = "header_section">
+        <div class = "logo_and_title">
+            <img src="images/lightbulb.png" id="profile" alt = "Lightbulb" height="60px" vspace="5px" hspace="5px"
+            class="icon">
+            <h2 class = "section_title" id = "user_display"><span style="color: red">Template User's </span>Ranking of Places in Madrid</h2>
+        </div>
+        <div class = "multiple_row" id = "option_buttons">
+            <div class="button" id = "logout">Log Out</div>
+            <div class="button" id = "register">Options</div>
+            <div class="button" id = "settings">Settings</div>
+        </div>
+    </div>
+    <div class = "body_section" id= "body_section">
+        <div class="column" id = "left_column">
+            <div class = "col_title_and_hamburger">
+                <h3 class="section_title">Favorite Places</h3>
+                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                    <img src="images/hamburger.png" alt = "Hamburger" height = "60px" class="hamburger">
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li class = "archive" role="presentation"><a role="menuitem" tabindex="-1" href="#">Archive List</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>
+                </ul>
+            </div>
+            <div class = "card_section" id = "left_card_section">
+                <div class = "card">
+                    <div class="logo_and_title">
+                        <img src="images/templo.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                        <div class = "section_title card_title">Templo de Debod</div>
+                        <button id = "exit_button" class="exit_button">X</button>
+                    </div>
+                    <div class = "card_icons">
+                        <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal">
+                            <img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px"
+                                 class="icon">
+                        </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Share this Information</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="images/fb_logo.png" height="30px" vspace="5px" hspace="5px" class="icon">
+                                        <img src="images/twitter_logo.png" height="30px" vspace="5px" hspace="5px" class="icon">
+                                        <img src="images/email_logo.png" height="30px" vspace="5px" hspace="5px" class="icon">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "date"><time datetime="10/10/2019 12:00">10/10/2019 12:00</time></div>
+                    </div>
+                </div>
+                <div class = "card">
+                    <div class="logo_and_title">
+                        <img src="images/retiro.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                        <div class = "section_title card_title">Parque de Retiro</div>
+                        <button class="exit_button">X</button>
+                    </div>
+                    <div class = "card_icons">
+                        <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal">
+                            <img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
+                        <div class = "date"><time datetime="11/10/2019 12:05">11/10/2019 12:05</time></div>
+                    </div>
+                </div>
+                <div class = "card">
+                    <div class="logo_and_title">
+                        <img src="images/chap.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                        <div class = "section_title card_title">El Chapandaz</div>
+                        <button class="exit_button">X</button>
+                    </div>
+                    <div class = "card_icons">
+                        <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal">
+                            <img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
+                        <div class = "date"><time datetime="12/10/2019 12:10">12/10/2019 12:10</time></div>
+                    </div>
+                </div>
+                <div class = "card">
+                    <div class="logo_and_title">
+                        <img src="images/rastro.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                        <div class = "section_title card_title">El Rastro</div>
+                        <button class="exit_button">X</button>
+                    </div>
+                    <div class = "card_icons">
+                        <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px"
+                                                                                                                 class="icon">
+                        </button>
+                        <div class = "date"><time datetime="13/10/2019 12:15">13/10/2019 12:15</time></div>
+                    </div>
+                </div>
+                <div class = "card">
+                    <div class="logo_and_title">
+                        <img src="images/granvia.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                        <div class = "section_title card_title">Gran Via</div>
+                        <button class="exit_button">X</button>
+                    </div>
+                    <div class = "card_icons">
+                        <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px"
+                                                                                                                 class="icon">
+                        </button>
+                        <div class = "date"><time datetime="14/10/2019 12:20">14/10/2019 12:20</time></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column" id = "middle_column">
+            <div class = "col_title_and_hamburger">
+                <h3 class="section_title">Ok Places</h3>
+                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                    <img src="images/hamburger.png" alt = "Hamburger" height = "60px" class="hamburger">
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li class = "archive" role="presentation"><a role="menuitem" tabindex="-1" href="#">Archive List</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>
+                </ul>
+            </div>
+            <div class = "card_section" id = "middle_card_section">
+                <div class = "card">
+                    <div class="logo_and_title">
+                        <img src="images/cienmont.png" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                        <div class = "section_title card_title">100 Montaditos</div>
+                        <button class="exit_button">X</button>
+                    </div>
+                    <div class = "card_icons">
+                        <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
+                        <div class = "date"><time datetime="15/10/2019 12:25">15/10/2019 12:25</time></div>
+                    </div>
+                </div>
+                <div class = "card">
+                    <div class="logo_and_title">
+                        <img src="images/corte.gif" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                        <div class = "section_title card_title">El Corte Ingles</div>
+                        <button class="exit_button">X</button>
+                    </div>
+                    <div class = "card_icons">
+                        <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px"
+                                                                                                                 class="icon">
+                        </button>
+                        <div class = "date"><time datetime="16/10/2019 12:30">16/10/2019 12:30</time></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column" id = "right_column">
+            <div class = "col_title_and_hamburger">
+                <h3 class="section_title">Worst Places</h3>
+                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                    <img src="images/hamburger.png" alt = "Hamburger" height = "60px" class="hamburger">
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li class = "archive" role="presentation"><a role="menuitem" tabindex="-1" href="#">Archive List</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>
+                </ul>
+            </div>
+            <div class = "card_section" id = "right_card_section">
+                <div class = "card">
+                    <div class="logo_and_title">
+                        <img src="images/reina.png" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                        <div class = "section_title card_title">Reina Sofia</div>
+                        <button class="exit_button">X</button>
+                    </div>
+                    <div class = "card_icons">
+                        <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
+                        <div class = "date"><time datetime="17/10/2019 12:35">17/10/2019 12:35</time></div>
+                    </div>
+                </div>
+                <div class = "card">
+                    <div class="logo_and_title">
+                        <img src="images/palacio.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                        <div class = "section_title card_title">Palacio Real</div>
+                        <button class="exit_button">X</button>
+                    </div>
+                    <div class = "card_icons">
+                        <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
+                        <div class = "date"><time datetime="18/10/2019 12:40">18/10/2019 12:40</time></div>
+                    </div>
+                </div>
+                <div class = "card">
+                    <div class="logo_and_title">
+                        <img src="images/sanmiguel.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                        <div class = "section_title card_title">Mercado de San Miguel</div>
+                        <button class="exit_button">X</button>
+                    </div>
+                    <div class = "card_icons">
+                        <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
+                        <div class = "date"><time datetime="19/10/2019 12:45">19/10/2019 12:45</time></div>
+                    </div>
+                </div>
+                <div class = "card">
+                    <div class="logo_and_title">
+                        <img src="images/madridaero.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                        <div class = "section_title card_title">Aeropuerto de Madrid</div>
+                        <button class="exit_button">X</button>
+                    </div>
+                    <div class = "card_icons">
+                        <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
+                        <div class = "date"><time datetime="20/10/2019 12:50">20/10/2019 12:50</time></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id = "footer_section">
+        <div class = "multiple_row" id = "link_row">
+            <a class="linkcell rightborder" href="http://www.google.com"> Copyright </a>
+            <a class="linkcell" href="http://www.facebook.com"> Visit our Facebook! </a>
+            <a class="linkcell leftborder" href="http://www.twitter.com"> Visit our Twitter!  </a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>
