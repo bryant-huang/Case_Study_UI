@@ -107,6 +107,31 @@ function directToLogIn(){
     document.getElementById("log_in_screen").style.display = "block";
 }
 
+//Obtain the card the user clicked on and store it in a global variable
+var edittedCard;
+function editCard(clicked){
+    edittedCard=clicked;
+}
+
+//Obtain the name from the modal form and modify it in the card in edittedCard
+function changeName(){
+    var newname=document.forms["newCardName"]["name"].value;
+    edittedCard.parentNode.parentNode.previousElementSibling.children[1].innerHTML=newname;
+    document.forms["newCardName"]["name"].value="";
+}
+
+//Obtain the date from the modal form and modify it in the card in edittedCard
+function changeDate(){
+    var newdate=document.forms["newCardDate"]["date"].value;
+    //Check that the date-time format is correct
+    if(!/([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}(\ )([0-2][0-9])(\:)([0-5][0-9])/.test(newdate)){
+        alert("Invalid format, write as dd/mm/yyyy hh:mm");
+        return;
+    }
+    edittedCard.parentNode.parentNode.children[edittedCard.parentNode.parentNode.children.length-1].innerHTML=newdate;
+    document.forms["newCardDate"]["date"].value="";
+}
+
 //Checks to see if there is a login
 window.onload = function(){
         if (getCookie("login") == "true"){
