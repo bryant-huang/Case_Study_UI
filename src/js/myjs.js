@@ -320,6 +320,8 @@ $(document).ready(function() {
     $('div.button-clickable').click(function(){
         if ($(this).attr("id") == "logout"){
             setCookie("login", false);
+            document.getElementById("user_display").innerHTML = getCookie("username") + "'s Ranking of Places in Madrid";
+            document.getElementById("profile").src = "images/bryantadam.jpeg";
             document.getElementById("nonreg").style.display = "block";
             document.getElementById("main_profile").style.display = "none";
         }
