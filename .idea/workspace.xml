@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60c19a1b-443c-4ef7-8da7-b757e723d45f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/myjs.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/myjs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="329" column="57" lean-forward="true" selection-start-line="329" selection-start-column="57" selection-end-line="329" selection-end-column="57" />
+            <state relative-caret-position="157">
+              <caret line="372" selection-start-line="372" selection-end-line="373" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -24,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="103" column="58" selection-start-line="103" selection-start-column="58" selection-end-line="103" selection-end-column="58" />
+            <state relative-caret-position="382">
+              <caret line="100" column="48" lean-forward="true" selection-start-line="100" selection-start-column="48" selection-end-line="100" selection-end-column="48" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -54,10 +55,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sign</find>
-      <find>sign up</find>
-      <find>save_new</find>
-      <find>directTO</find>
       <find>window</find>
       <find>save_new_user</find>
       <find>user_display</find>
@@ -81,9 +78,13 @@
       <find>Back</find>
       <find>non</find>
       <find>document.getElementById(&quot;user_display&quot;).innerHTML = getCookie(&quot;username&quot;) + &quot;'s Ranking of Places in Madrid&quot;;</find>
-      <find>lOG IN</find>
       <find>log in</find>
+      <find>lOG IN</find>
       <find>login</find>
+      <find>back</find>
+      <find>directToNon</find>
+      <find>console.log</find>
+      <find>onclick</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -287,8 +288,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="103" column="58" selection-start-line="103" selection-start-column="58" selection-end-line="103" selection-end-column="58" />
+        <state relative-caret-position="382">
+          <caret line="100" column="48" lean-forward="true" selection-start-line="100" selection-start-column="48" selection-end-line="100" selection-end-column="48" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -305,8 +306,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/myjs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="329" column="57" lean-forward="true" selection-start-line="329" selection-start-column="57" selection-end-line="329" selection-end-column="57" />
+        <state relative-caret-position="157">
+          <caret line="372" selection-start-line="372" selection-end-line="373" selection-end-column="78" />
         </state>
       </provider>
     </entry>

@@ -320,8 +320,6 @@ $(document).ready(function() {
     $('div.button-clickable').click(function(){
         if ($(this).attr("id") == "logout"){
             setCookie("login", false);
-            document.getElementById("user_display").innerHTML = getCookie("username") + "'s Ranking of Places in Madrid";
-            document.getElementById("profile").src = "images/bryantadam.jpeg";
             document.getElementById("nonreg").style.display = "block";
             document.getElementById("main_profile").style.display = "none";
         }
@@ -340,8 +338,9 @@ $(document).ready(function() {
                        '</form>' +
                        '</div>';
             $("div.body_logged_out").replaceWith(login);
-
-                }
+            document.getElementById("user_display").innerHTML = getCookie("username") + "'s Ranking of Places in Madrid";
+            document.getElementById("profile").src = "images/bryantadam.jpeg";
+            }
     });
 
     //executes function to save new user
@@ -370,8 +369,9 @@ $(document).ready(function() {
         }
         else if ($("input[name=loginpassword]").val() == getCookie("password")){
             setCookie("login", "true");
-            document.getElementById("log_in_screen").style.display = "none";
             directToMain();
+            document.getElementById("user_display").innerHTML = getCookie("username") + "'s Ranking of Places in Madrid";
+            document.getElementById("profile").src = "images/bryantadam.jpeg";
         }
         else if ($("input[name=loginpassword]").val() != getCookie("password")){
             alert("Log In Failed!");
