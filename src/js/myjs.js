@@ -132,6 +132,12 @@ function changeDate(){
     document.forms["newCardDate"]["date"].value="";
 }
 
+function addColumn(){
+}
+function addNewCard(){
+
+}
+
 //Checks to see if there is a login
 window.onload = function(){
         if (getCookie("login") == "true"){
@@ -192,7 +198,7 @@ $(document).ready(function() {
     });
 
     //provides functionality for buttons, specifically logout, register, and login
-    $('div.button').click(function(){
+    $('div.button-clickable').click(function(){
         if ($(this).attr("id") == "logout"){
             setCookie("login", false);
 //            document.getElementById("profile").src = "images/login.png";
@@ -327,7 +333,7 @@ $(function() {
         axis: "x",
         containment: "window"
     }).disableSelection();
-    $("#left_card_section, #middle_card_section, #right_card_section").sortable({
+    $(".column").sortable({
         connectWith: ".card_section",
         containment:"window"
     }).disableSelection();

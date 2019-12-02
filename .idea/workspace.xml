@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60c19a1b-443c-4ef7-8da7-b757e723d45f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/images/planit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/planit_example.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/myjs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,13 +49,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Case_Study_UI/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="myjs.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/js/myjs.js" working-dir="$PROJECT_DIR$/src/js">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="Node.js.myjs.js" />
       </list>
     </recent_temporary>
   </component>
@@ -71,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1574341076337</updated>
       <workItem from="1574963432685" duration="135000" />
-      <workItem from="1575284145273" duration="4642000" />
+      <workItem from="1575284145273" duration="7150000" />
     </task>
     <task id="LOCAL-00001" summary="Pull js updates">
       <created>1575284174556</created>
@@ -80,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575284174556</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Landing page update">
+      <created>1575289771181</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575289771181</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,7 +111,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Pull js updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pull js updates" />
+    <MESSAGE value="Landing page update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Landing page update" />
   </component>
   <component name="masterDetails">
     <states>

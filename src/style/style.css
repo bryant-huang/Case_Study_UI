@@ -53,12 +53,24 @@
     border: black solid 1px;
     height: fit-content;
     margin-right: 1vw;
+    background-color: rgba(56,59,227,1);
 }
 
 #body_section {
-    display: inline-flex;
+    display: inline;
     margin-left: 1vw;
     margin-top: 10px;
+}
+
+#column_section {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    margin-left: 1vw;
+    padding: 5px;
+    background-color: black;
+    width: 98vw;
 }
 
 .col_title_and_hamburger {
@@ -174,8 +186,24 @@ form {
     margin-bottom: 1px;
 }
 
+.addNewTaskButton {
+    background-color: #3891E3;
+    border: 1px solid #38e3e0;
+    color:white;
+    padding: 0.5em;
+    text-align: center;
+    font-size: 1em;
+    display: inline-block;
+    width: 26vw;
+    border-radius: 3px;
+    margin-left: 1vw;
+    margin-bottom: 1px;
+}
+
 #landing-message {
     font-size: 30px;
 }
+
+
 
 
