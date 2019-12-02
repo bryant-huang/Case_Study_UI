@@ -128,14 +128,19 @@
                     </div>
                     <div class="modal-body">
                         <h5 class="modal-title" id="exampleModalLabel">Edit name</h5>
-                        <form name="newCardName">
+                        <form name="editCardName">
                             <input name="name" type="text">
                             <button type="button" onclick="changeName()">Save</button>
                         </form>
                         <h5 class="modal-title" id="exampleModalLabel">Edit date</h5>
-                        <form name="newCardDate">
+                        <form name="editCardDate">
                             <input name="date" type="text">
                             <button type="button" onclick="changeDate()">Save</button>
+                        </form>
+                        <h5 class="modal-title" id="exampleModalLabel">Edit image</h5>
+                        <form name="editCardImage">
+                            <input name="image" type="text">
+                            <button type="button" onclick="changeImage()">Save</button>
                         </form>
                         <br>
                         <button onclick="alert('Invited!');">Invite collaborators</button>
@@ -143,7 +148,57 @@
                 </div>
             </div>
         </div>
-        <button class="button-clickable" onclick="addColumn()" style="width:98vw;margin-left: 0vw; margin-top: 1vh; margin-bottom: 1vh">
+        <!--New modal for adding cards to a column-->
+        <div class="modal fade" id="cardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add a new card</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+                        <form name="newCardName">
+                            <input name="name" type="text">
+                        </form>
+                        <h5 class="modal-title" id="exampleModalLabel">Image link</h5>
+                        <form name="newCardImage">
+                            <input name="image" type="text">
+                        </form>
+                        <h5 class="modal-title" id="exampleModalLabel">Date and time (current time by default)</h5>
+                        <form name="newCardDate">
+                            <input name="date" type="text">
+                        </form>
+                        <br>
+                        <button onclick="addNewCard()">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--New modal for adding columns-->
+        <div class="modal fade" id="colModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add a new column</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="exampleModalLabel">Name</h5>
+                        <form name="newColName">
+                            <input name="name" type="text">
+                        </form>
+                        <br>
+                        <button onclick="addNewColumn()" data-toggle="modal" data-target="#colModal">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="button-clickable" data-toggle="modal" data-target="#colModal" style="width:98vw;margin-left: 0vw; margin-top: 1vh; margin-bottom: 1vh">
             Add Column!
         </button>
         <div id="column_section">
@@ -162,7 +217,7 @@
                     </ul>
                 </div>
                 <br>
-                <button class = "addNewTaskButton" onclick="addNewCard()">Add New Task!</button>
+                <button class = "addNewTaskButton" onclick="chosenColumn(this)" data-toggle="modal" data-target="#cardModal">Add New Task!</button>
                 <div class = "card_section" id = "left_card_section">
                     <div class = "card">
                         <div class="logo_and_title">
@@ -290,7 +345,7 @@
                     </ul>
                 </div>
                 <br>
-                <button class = "addNewTaskButton" onclick="addNewCard()">Add New Task!</button>
+                <button class = "addNewTaskButton" onclick="chosenColumn(this)" data-toggle="modal" data-target="#cardModal">Add New Task!</button>
                 <div class = "card_section" id = "middle_card_section">
                     <div class = "card">
                         <div class="logo_and_title">
@@ -344,7 +399,7 @@
                     </ul>
                 </div>
                 <br>
-                <button class = "addNewTaskButton" onclick="addNewCard()">Add New Task!</button>
+                <button class = "addNewTaskButton" onclick="chosenColumn(this)" data-toggle="modal" data-target="#cardModal">Add New Task!</button>
                 <div class = "card_section" id = "right_card_section">
                     <div class = "card">
                         <div class="logo_and_title">
@@ -431,7 +486,7 @@
                     </ul>
                 </div>
                 <br>
-                <button class = "addNewTaskButton" onclick="addNewCard()">Add New Task!</button>
+                <button class = "addNewTaskButton" onclick="chosenColumn(this)" data-toggle="modal" data-target="#cardModal">Add New Task!</button>
                 <div class = "card_section" id = "right_card_section">
                     <div class = "card">
                         <div class="logo_and_title">
@@ -518,7 +573,7 @@
                     </ul>
                 </div>
                 <br>
-                <button class = "addNewTaskButton" onclick="addNewCard()">Add New Task!</button>
+                <button class = "addNewTaskButton" onclick="chosenColumn(this)" data-toggle="modal" data-target="#cardModal">Add New Task!</button>
                 <div class = "card_section" id = "right_card_section">
                     <div class = "card">
                         <div class="logo_and_title">

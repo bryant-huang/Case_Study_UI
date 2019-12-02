@@ -115,28 +115,100 @@ function editCard(clicked){
 
 //Obtain the name from the modal form and modify it in the card in edittedCard
 function changeName(){
-    var newname=document.forms["newCardName"]["name"].value;
+    var newname=document.forms["editCardName"]["name"].value;
     edittedCard.parentNode.parentNode.previousElementSibling.children[1].innerHTML=newname;
-    document.forms["newCardName"]["name"].value="";
+    document.forms["editCardName"]["name"].value="";
 }
 
 //Obtain the date from the modal form and modify it in the card in edittedCard
 function changeDate(){
-    var newdate=document.forms["newCardDate"]["date"].value;
+    var newdate=document.forms["editCardDate"]["date"].value;
     //Check that the date-time format is correct
     if(!/([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}(\ )([0-2][0-9])(\:)([0-5][0-9])/.test(newdate)){
         alert("Invalid format, write as dd/mm/yyyy hh:mm");
         return;
     }
     edittedCard.parentNode.parentNode.children[edittedCard.parentNode.parentNode.children.length-1].innerHTML=newdate;
-    document.forms["newCardDate"]["date"].value="";
+    document.forms["editCardDate"]["date"].value="";
 }
 
-function addColumn(){
+function changeImage(){
+    var newimg=document.forms["editCardImage"]["image"].value;
+    edittedCard.parentNode.parentNode.previousElementSibling.children[0].src=newimg;
+    document.forms["editCardImage"]["image"].value="";
+}
+
+var chosenColumnv;
+function chosenColumn(clicked){
+    chosenColumnv=clicked;
 }
 function addNewCard(){
-
+    var inputname=document.forms["newCardName"]["name"].value;
+    var inputimage=document.forms["newCardImage"]["image"].value;
+    var inputdate=document.forms["newCardDate"]["date"].value;
+    if(inputdate!=""&&!/([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}(\ )([0-2][0-9])(\:)([0-5][0-9])/.test(newdate)){
+        alert("Invalid format, write as dd/mm/yyyy hh:mm");
+        return;
+    }else if(inputdate==""){
+        var newDate=new Date();
+        inputdate=(newDate.getDate()<10?"0"+newDate.getDate():newDate.getDate())+"/"
+        +(newDate.getMonth()+1<10?"0"+newDate.getMonth()+1:newDate.getMonth()+1)+"/"+
+        newDate.getFullYear()+" "+(newDate.getHours()<10?"0"+newDate.getHours():newDate.getHours())+
+        ":"+(newDate.getMinutes()<10?"0"+newDate.getMinutes():newDate.getMinutes());
+    }
+    
+    var cardhtml='<div class = "card">'+
+        '<div class="logo_and_title">'+
+            '<img src="'+(inputimage==""?"images/lightbulb.png":inputimage)+'" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">'+
+            '<div class = "section_title card_title">'+(inputname==""?"New card":inputname)+'</div>'+
+                '<button class="exit_button">X</button>'+
+            '</div>'+
+            '<div class = "card_icons">'+
+                '<button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">'+
+                    '<img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">'+
+                '</button>'+
+                '<img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">'+
+                '<img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">'+
+                '<button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">'+
+                '</button>'+
+            '<div class = "date"><time datetime="'+inputdate+'">'+inputdate+'</time></div>'+
+        '</div>'+
+    '</div>';
+    chosenColumnv.nextElementSibling.insertAdjacentHTML("beforeend",cardhtml);
+    $(".card_section").sortable("refresh");
+    delete $('button.exit_button').fn;
+    $(chosenColumnv.nextElementSibling.children[chosenColumnv.nextElementSibling.children.length-1].children[0].children[2]).click(function() {
+    if (confirm( "Are you sure")){
+        $(this).parent().parent().remove();
+    }
+    });
 }
+
+function addNewColumn(){
+    var inputname=document.forms["newColName"]["name"].value;
+    var colhtml='<div class="column">'+
+                '<div class = "col_title_and_hamburger">'+
+                    '<h3 class="section_title">'+(inputname==""?"New column":inputname)+'</h3>'+
+                    '<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">'+
+                        '<img src="images/hamburger.png" alt = "Hamburger" height = "60px" class="hamburger">'+
+                    '</button>'+
+                    '<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">'+
+                        '<li class = "archive" role="presentation"><a role="menuitem" tabindex="-1" href="#">Archive List</a></li>'+
+                        '<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>'+
+                        '<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>'+
+                        '<li role="presentation" class="divider"></li>'+
+                        '<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>'+
+                    '</ul>'+
+                '</div>'+
+                '<br>'+
+                '<button class = "addNewTaskButton" onclick="chosenColumn(this)" data-toggle="modal" data-target="#cardModal">Add New Task!</button>'+
+                '<div class = "card_section" id = "left_card_section">'+
+                '</div>'+
+            '</div>';
+    document.getElementById("column_section").insertAdjacentHTML("beforeend",colhtml);
+    $("#column_section").sortable("refresh");
+}
+
 
 //Checks to see if there is a login
 window.onload = function(){
@@ -329,11 +401,11 @@ $(document).ready(function() {
 });
 
 $(function() {
-    $(".body_section").sortable({
+    $("#column_section").sortable({
         axis: "x",
         containment: "window"
     }).disableSelection();
-    $(".column").sortable({
+    $(".card_section").sortable({
         connectWith: ".card_section",
         containment:"window"
     }).disableSelection();
