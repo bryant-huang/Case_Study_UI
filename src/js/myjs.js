@@ -177,11 +177,35 @@ function addNewCard(){
     '</div>';
     chosenColumnv.nextElementSibling.insertAdjacentHTML("beforeend",cardhtml);
     $(".card_section").sortable("refresh");
-    delete $('button.exit_button').fn;
     $(chosenColumnv.nextElementSibling.children[chosenColumnv.nextElementSibling.children.length-1].children[0].children[2]).click(function() {
     if (confirm( "Are you sure")){
         $(this).parent().parent().remove();
     }
+    });
+    $('img.icon').hover(function() {
+        var type = $(this).attr("alt");
+        switch (type){
+            case "like":
+                $(this).attr("title", "This is to like")
+                break;
+            case "share":
+                $(this).attr("title", "This is to share")
+                break;
+            case "comment":
+                $(this).attr("title", "This is to comment")
+                break;
+        }
+
+    });
+    $(chosenColumnv.nextElementSibling.children[chosenColumnv.nextElementSibling.children.length-1].children[1].children[1]).click(function() {
+        var type = $(this).attr("alt");
+        if (type=="like"){
+            if ($(this).attr("src")== "images/like.png"){
+                $(this).attr("src", "images/like_highlighted.png");
+            }else if ($(this).attr("src")== "images/like_highlighted.png"){
+                $(this).attr("src", "images/like.png");
+            }
+        }
     });
 }
 
@@ -208,6 +232,11 @@ function addNewColumn(){
             '</div>';
     document.getElementById("column_section").insertAdjacentHTML("beforeend",colhtml);
     $("#column_section").sortable("refresh");
+    $(document.getElementById("column_section").children[document.getElementById("column_section").children.length-1].children[0].children[2].children[0]).click(function() {
+        if (confirm( "Are you sure")){
+            $(this).parent().parent().parent().remove();
+        }
+    });
 }
 
 
