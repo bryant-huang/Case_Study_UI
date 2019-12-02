@@ -183,7 +183,7 @@ function addNewCard(){
     chosenColumnv.nextElementSibling.insertAdjacentHTML("beforeend",cardhtml);
     $(".card_section").sortable("refresh");
     $(chosenColumnv.nextElementSibling.children[chosenColumnv.nextElementSibling.children.length-1].children[0].children[2]).click(function() {
-    if (confirm( "Are you sure")){
+    if (confirm( "Are you sure you want to archive this task?")){
         $(this).parent().parent().remove();
     }
     });
@@ -238,7 +238,7 @@ function addNewColumn(){
     document.getElementById("column_section").insertAdjacentHTML("beforeend",colhtml);
     $("#column_section").sortable("refresh");
     $(document.getElementById("column_section").children[document.getElementById("column_section").children.length-1].children[0].children[2].children[0]).click(function() {
-        if (confirm( "Are you sure")){
+        if (confirm( "Are you sure you want to archive this column?")){
             $(this).parent().parent().parent().remove();
         }
     });
@@ -256,7 +256,7 @@ window.onload = function(){
 $(document).ready(function() {
 
     $('button.exit_button').click(function() {
-    if (confirm( "Are you sure")){
+    if (confirm( "Are you sure you want to archive this task?")){
         $(this).parent().parent().remove();
     }
     });
@@ -299,7 +299,7 @@ $(document).ready(function() {
 
     //archives a column of items based on user click, alerts a confirmation screen
     $('li.archive').click(function() {
-          if (confirm( "Are you sure")){
+          if (confirm( "Are you sure you want to archive this column?")){
                 $(this).parent().parent().parent().remove();
             }
     });
