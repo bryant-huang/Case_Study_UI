@@ -14,24 +14,46 @@
 <div id="nonreg">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm">
-                <h2>PlanIt</h2>
+            <div class="col-sm" style="display: flex; padding-top: 3px">
+                <img src="images/planit.png" height="50px" width="50px" style = "margin-top: 10px">
+                <h2><span style="color: white; font-size: 60px">PlanIt</span></h2>
             </div>
-            <div class="col-sm" style= "float: right">
-                <button onclick= "directToLogIn()" style= "float: right">Log In</button>
-                <button onclick="directToSignUp()" style= "float: right">Sign Up</button>
+            <div class="col-sm" style= "float: right; margin-top: 2vh">
+                <button class = "button-clickable" onclick= "directToLogIn()" style= "float: right">Log In</button>
+                <button class = "button-clickable" onclick="directToSignUp()" style= "float: right">Sign Up</button>
             </div>
         </div>
-        <div class = "row">
-            <div class="col-sm" style= "height: 50vh; width: 50vw; border: black solid 1px">
-                Left
+        <br> <br>
+        <div class = "row" style="color: rgba(56,59,227, 1)">
+            <div class="col-sm" style= "height: 50vh; width: 50vw" id = "landing-message">
+                <span style="font-weight: bolder"><span style="color: white; font-size: 40px">PlanIt</span> is the newest and most technologically advanced self-schedueler on the market.</span>
+                <br> <br>
+                Registered users can easily manage tasks and events, and share those events with their friends!
+                <br> <br>
+                PlanIt is proud to call itself a "social <span style="font-weight: bold">netWORK"!</span>
             </div>
-            <div class="col-sm" style= "height: 50vh; width: 50vw; border: black solid 1px">
-                Right
+            <div class="col-sm" style="display: inline-flex; background-color: rgba(56,59,227,0.5); border: 1px solid #38e3e0; margin-right: 1vw">
+                <img src="images/planit_example.png" height="350px" style="margin: auto">
             </div>
         </div>
     </div>
-    <button onclick ="directToMain()">Go to Main</button>
+    <br><br>
+    <div style="display: flex">
+        <h3 style="margin-top: 6px; margin-left: 6px; color:#38e3e0 ">Start your planning journey today:</h3>
+        <button class = "button-clickable" onclick="directToSignUp()" style="width: 68vw; margin-left: 25px">Sign up here, it's free!</button>
+    </div>
+    <br>
+    <button onclick ="directToMain()" style="width: 10vw">Go to Main</button>
+    <br><br><br>
+    <div id = "footer_section">
+        <div class = "multiple_row" id = "link_row">
+            <a class="linkcell rightborder" href="http://www.google.com"> Copyright </a>
+            <a class="linkcell" href="http://www.facebook.com"> Visit our Facebook! </a>
+            <a class="linkcell leftborder" href="http://www.twitter.com"> Visit our Twitter!  </a>
+        </div>
+    </div>
+    </div>
+    <br> <br> <br>
 </div>
 <div id="sign_up_screen" style = "display : none">
     <div class="body_logged_out" style="height: fit-content">
