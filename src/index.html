@@ -93,6 +93,35 @@
         </div>
     </div>
     <div class = "body_section" id= "body_section">
+    
+        <!--New modal for editing the individual cards-->
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit this card</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit name</h5>
+                        <form name="newCardName">
+                            <input name="name" type="text">
+                            <button type="button" onclick="changeName()">Save</button>
+                        </form>
+                        <h5 class="modal-title" id="exampleModalLabel">Edit date</h5>
+                        <form name="newCardDate">
+                            <input name="date" type="text">
+                            <button type="button" onclick="changeDate()">Save</button>
+                        </form>
+                        <br>
+                        <button onclick="alert('Invited!');">Invite collaborators</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="column" id = "left_column">
             <div class = "col_title_and_hamburger">
                 <h3 class="section_title">Favorite Places</h3>
@@ -115,6 +144,9 @@
                         <button id = "exit_button" class="exit_button">X</button>
                     </div>
                     <div class = "card_icons">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
+                            <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
                         <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
                         <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
                         <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal">
@@ -149,6 +181,9 @@
                         <button class="exit_button">X</button>
                     </div>
                     <div class = "card_icons">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
+                            <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
                         <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
                         <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
                         <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal">
@@ -164,6 +199,9 @@
                         <button class="exit_button">X</button>
                     </div>
                     <div class = "card_icons">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
+                            <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
                         <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
                         <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
                         <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal">
@@ -179,6 +217,9 @@
                         <button class="exit_button">X</button>
                     </div>
                     <div class = "card_icons">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
+                            <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
                         <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
                         <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
                         <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px"
@@ -194,6 +235,9 @@
                         <button class="exit_button">X</button>
                     </div>
                     <div class = "card_icons">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
+                            <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
                         <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
                         <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
                         <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px"
@@ -226,6 +270,9 @@
                         <button class="exit_button">X</button>
                     </div>
                     <div class = "card_icons">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
+                            <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
                         <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
                         <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
                         <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
@@ -240,6 +287,9 @@
                         <button class="exit_button">X</button>
                     </div>
                     <div class = "card_icons">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
+                            <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
                         <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
                         <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
                         <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px"
@@ -272,6 +322,9 @@
                         <button class="exit_button">X</button>
                     </div>
                     <div class = "card_icons">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
+                            <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
                         <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
                         <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
                         <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
@@ -286,6 +339,9 @@
                         <button class="exit_button">X</button>
                     </div>
                     <div class = "card_icons">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
+                            <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
                         <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
                         <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
                         <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
@@ -300,6 +356,9 @@
                         <button class="exit_button">X</button>
                     </div>
                     <div class = "card_icons">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
+                            <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
                         <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
                         <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
                         <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
@@ -314,6 +373,9 @@
                         <button class="exit_button">X</button>
                     </div>
                     <div class = "card_icons">
+                        <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
+                            <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
+                        </button>
                         <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
                         <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
                         <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
