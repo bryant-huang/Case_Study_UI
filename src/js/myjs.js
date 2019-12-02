@@ -1,12 +1,11 @@
 //Method executed upon user clicking the save button under the registration button.
 function save_new_user(){
+    console.log("here");
     var username = $("input[name=username]").val();
     var password = $("input[name=password]").val();
     var name = $("input[name=name]").val();
     var email = $("input[name=email]").val();
     var birthday = $("input[name=birthday]").val();
-    var interest = document.getElementById("interestSpan").innerHTML;
-    var language = document.getElementById("languageSpan").innerHTML;
     var purpose = $("input[name=purpose]").val();
 
     if (getCookie("email") == email){
@@ -19,12 +18,13 @@ function save_new_user(){
         setCookie("name",name);
         setCookie("email",email);
         setCookie("birthday",birthday);
-        setCookie("interest",interest);
-        setCookie("language",language);
-        setCookie("purpose",purpose);
         setCookie("login",true);
         console.log(document.cookie);
     }
+}
+
+function showCookies(){
+    alert(document.cookie)
 }
 function getCookie(name) {
   var myName = name + "=";
@@ -91,6 +91,7 @@ function deleteInfo(){
 }
 
 function directToMain(){
+    document.body.style.backgroundColor = "#3891E3";
     document.getElementById("nonreg").style.display = "none";
     document.getElementById("main_profile").style.display = "block";
 }
@@ -385,15 +386,20 @@ $(document).ready(function() {
 
     //Executes sequence of events when user clicks the login button, checks cookies and validates login
     $(document).on("click", ".login", function(){
+        console.log("here");
         event.preventDefault();
-        if ($("input[name=email]").val() != getCookie("email")){
+        console.log($("input[name=loginemail]").val());
+        console.log(getCookie("email"));
+        if ($("input[name=loginemail]").val() != getCookie("email")){
             alert("No account exists with this email.");
         }
-        else if ($("input[name=password]").val() == getCookie("password")){
+        else if ($("input[name=loginpassword]").val() == getCookie("password")){
             setCookie("login", "true");
-            location.replace("index.html");
+            document.getElementById("log_in_screen").style.display = "none";
+
+            directToMain();
         }
-        else if ($("input[name=password]").val() != getCookie("password")){
+        else if ($("input[name=loginpassword]").val() != getCookie("password")){
             alert("Log In Failed!");
         }
     });
