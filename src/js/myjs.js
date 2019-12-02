@@ -90,13 +90,12 @@ function deleteInfo(){
     $("input[name=name]").val("");
     $("input[name=email]").val("");
     $("input[name=birthday]").val("");
-    document.getElementById("interestSpan").innerHTML = "Interests";
-    document.getElementById("languageSpan").innerHTML = "Languages";
-    $("input[name=purpose]").val("");
 }
 
 function directToMain(){
     document.body.style.backgroundColor = "#3891E3";
+    document.getElementById("log_in_screen").style.display = "none";
+    document.getElementById("sign_up_screen").style.display = "none";
     document.getElementById("nonreg").style.display = "none";
     document.getElementById("main_profile").style.display = "block";
 }
@@ -104,13 +103,26 @@ function directToMain(){
 function directToSignUp(){
     document.body.style.backgroundColor = "#F7F7F7";
     document.getElementById("nonreg").style.display = "none";
+    document.getElementById("log_in_screen").style.display = "none";
+    document.getElementById("main_profile").style.display = "none";
     document.getElementById("sign_up_screen").style.display = "block";
 }
 
 function directToLogIn(){
     document.body.style.backgroundColor = "#F7F7F7";
     document.getElementById("nonreg").style.display = "none";
+    document.getElementById("main_profile").style.display = "none";
+    document.getElementById("sign_up_screen").style.display = "none";
     document.getElementById("log_in_screen").style.display = "block";
+}
+
+function directToNonReg(){
+    document.body.style.backgroundColor = "#3891E3";
+    document.getElementById("nonreg").style.display = "block";
+    document.getElementById("log_in_screen").style.display = "none";
+    document.getElementById("main_profile").style.display = "none";
+    document.getElementById("sign_up_screen").style.display = "none";
+
 }
 
 //Obtain the card the user clicked on and store it in a global variable
@@ -308,82 +320,9 @@ $(document).ready(function() {
     $('div.button-clickable').click(function(){
         if ($(this).attr("id") == "logout"){
             setCookie("login", false);
-//            document.getElementById("profile").src = "images/login.png";
-//            document.getElementById("user_display").innerHTML = "RankMad: A Ranking of Places in Madrid";
-//            var newHTML = "<div class='body_logged_out'></div>";
-//            var empty = "";
-//
-//            $("div.body_section").replaceWith(newHTML);
-//            $("div.button");
-//            document.getElementById("register").innerHTML = "Register";
-//            document.getElementById("login").innerHTML = "Log In";
-//            document.getElementById("logout").replaceWith(empty);
             document.getElementById("nonreg").style.display = "block";
             document.getElementById("main_profile").style.display = "none";
         }
-
-//        if ($(this).attr("id") == "register"){
-//            var form = '<div class="body_logged_out" style="height: fit-content">' +
-//                       '<form name= "signup">' +
-//                       '<h5>Account Information</h5>' +
-//                       'Username:<br>' +
-//                       '<input type="text" name="username" required>' +
-//                       '<br>' +
-//                       'Password:<br>' +
-//                       '<input type="password" name="password" pattern="^[A-Za-z0-9]{1,8}"  required title="8 characters' +
-//                       ' maximum, no special characters">'+
-//                       '<br><br>' +
-//                       '<h5>Personal Information</h5>' +
-//                       'Name and Surname<br>' +
-//                       '<input type="text" name="name" required>' +
-//                       '<br>' +
-//                       'Email<br>' +
-//                       '<input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"'+
-//                       'title="name@domain.extension">' +
-//                       '<br>' +
-//                       'Date of Birth<br>' +
-//                       '<input type="text" name="birthday" placeholder="dd/mm/yyyy" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])' +
-//                       '.(0[1-9]|1[012])' +
-//                       '.[0-9]{4}" required title = "dd/mm/yyyy">' +
-//                       '<br><br>' +
-//                       '<div class="dropdown">' +
-//                       '<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownInterests"' +
-//                       'data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">' +
-//                       '<span id = "interestSpan">Interest</span>' +
-//                       '</button>' +
-//                       '<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">' +
-//                       '<a class="dropdown-item" href="#">Computer Science</a>' +
-//                       '<a class="dropdown-item" href="#">Video Games</a>' +
-//                       '<a class="dropdown-item" href="#">Cooking</a>' +
-//                       '</div>' +
-//                       '</div>' +
-//                       '<br>' +
-//                       '<div class="dropdown">' +
-//                       '<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownLanguages"'+
-//                       'data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
-//                       '<span id = "languageSpan">Language</span>' +
-//                       '</button>' +
-//                       '<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">' +
-//                       '<a class="dropdown-item" href="#">Spanish</a>' +
-//                       '<a class="dropdown-item" href="#">English</a>' +
-//                       '<a class="dropdown-item" href="#">Italian</a>' +
-//                       '</div>' +
-//                       '<div>' +
-//                       '<br>' +
-//                       '<h5>App Purpose</h5>' +
-//                       '<input type="text" name="purpose">' +
-//                       '<br>' +
-//                       '<div>' +
-//                       '<p><input type="checkbox" name="terms" required> I accept the <u>Terms and Conditions</u></p>' +
-//                       '<button class="save_new_user" id="save_new_user">Save</button>' +
-//                       '<button class="delete">Delete</button>' +
-//                       '</div>' +
-//                       '</form>' +
-//                       '</div>';
-//
-//                    $("div.body_logged_out").replaceWith(form);
-//
-//        }
 
          if ($(this).attr("id") == "login"){
             var login = '<div class="body_logged_out">' +
