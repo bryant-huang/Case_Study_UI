@@ -228,6 +228,7 @@ function addNewCard(){
 
 function addNewColumn(){
     var inputname=document.forms["newColName"]["name"].value;
+    var inputcolor=document.forms["newColColor"]["color"].value;
     var colhtml='<div class="column">'+
                 '<div class = "col_title_and_hamburger">'+
                     '<h3 class="section_title">'+(inputname==""?"New column":inputname)+'</h3>'+
@@ -242,12 +243,12 @@ function addNewColumn(){
                         '<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>'+
                     '</ul>'+
                 '</div>'+
-                '<br>'+
                 '<button class = "addNewTaskButton" onclick="chosenColumn(this)" data-toggle="modal" data-target="#cardModal">Add New Task!</button>'+
                 '<div class = "card_section" id = "left_card_section">'+
                 '</div>'+
             '</div>';
-    document.getElementById("column_section").insertAdjacentHTML("beforeend",colhtml);
+    document.getElementById("column_section").insertAdjacentHTML("afterbegin",colhtml);
+    document.getElementById("column_section").firstChild.style.backgroundColor = inputcolor;
     $("#column_section").sortable("refresh");
     $(document.getElementById("column_section").children[document.getElementById("column_section").children.length-1].children[0].children[2].children[0]).click(function() {
         if (confirm( "Are you sure you want to archive this column?")){

@@ -49,6 +49,7 @@
 }
 
 .column {
+    display: grid;
     width: 100%;
     border: black solid 1px;
     height: fit-content;
@@ -198,9 +199,10 @@ form {
     text-align: center;
     font-size: 1em;
     display: inline-block;
-    width: 29.3vw;
+    width:inherit;
     border-radius: 3px;
-    margin-left: 1vw;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 1px;
 }
 
