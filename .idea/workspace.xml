@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="60c19a1b-443c-4ef7-8da7-b757e723d45f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/myjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +14,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1UFrwruWLGH8r63ioeT80zyJrJC" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574341204843" />
@@ -74,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1574341076337</updated>
       <workItem from="1574963432685" duration="135000" />
-      <workItem from="1575284145273" duration="7150000" />
+      <workItem from="1575284145273" duration="7683000" />
     </task>
     <task id="LOCAL-00001" summary="Pull js updates">
       <created>1575284174556</created>
@@ -90,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575289771181</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Columns buttons added">
+      <created>1575307570219</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575307570219</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,9 +118,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Pull js updates" />
     <MESSAGE value="Landing page update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Landing page update" />
+    <MESSAGE value="Columns buttons added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Columns buttons added" />
   </component>
   <component name="masterDetails">
     <states>
