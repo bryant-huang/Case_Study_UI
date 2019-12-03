@@ -145,7 +145,7 @@
                         </form>
                         <h5 class="modal-title" id="exampleModalLabel">Edit priority</h5>
                         <form name="editCardPriority">
-                            <select name="priority">
+                            <select id="prioritysel" name="priority">
                                 <option value="red">Very high! (Red)</option>
                                 <option value="yellow">High. (Yellow)</option>
                                 <option value="orange" selected>Medium. (Orange)</option>
@@ -175,7 +175,7 @@
                         <form name="newCardName">
                             <input name="name" type="text">
                         </form>
-                        <h5 class="modal-title" id="exampleModalLabel">Image link</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Priority</h5>
                         <form name="newCardPriority">
                             <select name="priority">
                                 <option value="red">Very high! (Red)</option>
@@ -187,7 +187,7 @@
                         </form>
                         <h5 class="modal-title" id="exampleModalLabel">Date and time (current time by default)</h5>
                         <form name="newCardDate">
-                            <input name="date" type="text">
+                            <input name="date" placeholder="dd/mm/yyyy hh:mm" type="text">
                         </form>
                         <br>
                         <button onclick="addNewCard()" data-toggle="modal" data-target="#cardModal">Confirm</button>

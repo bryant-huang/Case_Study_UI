@@ -216,7 +216,7 @@ form {
 
 form > input {
     border: #38e3e0 1px solid;
-    width: 33.5vw;
+    width: 21vw;
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=date]:focus  {
