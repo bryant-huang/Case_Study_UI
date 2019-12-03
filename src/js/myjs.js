@@ -368,7 +368,10 @@ $(document).ready(function() {
         event.preventDefault();
         console.log($("input[name=loginemail]").val());
         console.log(getCookie("email"));
-        if ($("input[name=loginemail]").val() != getCookie("email")){
+        if ($("input[name=loginemail]").val() == "" || $("input[name=loginpassword]").val() ==""){
+            alert("Please fill out the appropriate fields");
+        }
+        else if ($("input[name=loginemail]").val() != getCookie("email")){
             alert("No account exists with this email.");
         }
         else if ($("input[name=loginpassword]").val() == getCookie("password")){
