@@ -129,6 +129,24 @@ function directToNonReg(){
 var edittedCard;
 function editCard(clicked){
     edittedCard=clicked;
+    //Make it so when editting a card the correct priority is displayed
+    var priosrc=clicked.parentNode.parentNode.previousElementSibling.children[0].src;
+    console.log(priosrc);
+    var prio;
+    if(priosrc.includes("images/red.jpg")){
+        prio=0;
+    }else if(priosrc.includes("images/yellow.jpg")){
+        prio=1;
+    }else if(priosrc.includes("images/orange.jpg")){
+        prio=2;
+    }else if(priosrc.includes("images/green.jpg")){
+        prio=3;
+    }else if(priosrc.includes("images/blue.jpg")){
+        prio=4;
+    }else{
+        prio=2;
+    }
+    document.forms["editCardPriority"]["priority"].selectedIndex=prio;
 }
 
 //Obtain the name from the modal form and modify it in the card in edittedCard
@@ -150,11 +168,9 @@ function changeDate(){
     document.forms["editCardDate"]["date"].value="";
 }
 
-// TODO image -> priority
 function changeImage(){
-    var newimg=document.forms["editCardImage"]["image"].value;
-    edittedCard.parentNode.parentNode.previousElementSibling.children[0].src=newimg;
-    document.forms["editCardImage"]["image"].value="";
+    var newimg=document.forms["editCardPriority"]["priority"].value;
+    edittedCard.parentNode.parentNode.previousElementSibling.children[0].src=priority(newimg);
 }
 
 var chosenColumnv;
@@ -162,10 +178,26 @@ function chosenColumn(clicked){
     chosenColumnv=clicked;
 }
 
-// TODO image -> priority, case switch for priority level
+function priority(prio){
+    switch(prio){
+        case "red":
+            return "images/red.jpg";
+        case "yellow":
+            return "images/yellow.jpg";
+        case "orange":
+            return "images/orange.jpg";
+        case "green":
+            return "images/green.jpg";
+        case "blue":
+            return "images/blue.jpg";
+        default:
+            return "images/orange.jpg";
+    }
+}
+
 function addNewCard(){
     var inputname=document.forms["newCardName"]["name"].value;
-    var inputimage=document.forms["newCardImage"]["image"].value;
+    var inputprio=document.forms["newCardPriority"]["priority"].value;
     var inputdate=document.forms["newCardDate"]["date"].value;
     if(inputdate!=""&&!/([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}(\ )([0-2][0-9])(\:)([0-5][0-9])/.test(newdate)){
         alert("Invalid format, write as dd/mm/yyyy hh:mm");
@@ -177,10 +209,11 @@ function addNewCard(){
         newDate.getFullYear()+" "+(newDate.getHours()<10?"0"+newDate.getHours():newDate.getHours())+
         ":"+(newDate.getMinutes()<10?"0"+newDate.getMinutes():newDate.getMinutes());
     }
+    var prioImg=priority(inputprio);
     
     var cardhtml='<div class = "card">'+
         '<div class="logo_and_title">'+
-            '<img src="'+(inputimage==""?"images/lightbulb.png":inputimage)+'" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">'+
+            '<img src="'+prioImg+'" height="50px" vspace="5px" hspace="5px">'+
             '<div class = "section_title card_title">'+(inputname==""?"New card":inputname)+'</div>'+
                 '<button class="exit_button">X</button>'+
             '</div>'+
@@ -195,6 +228,7 @@ function addNewCard(){
             '<div class = "date"><time datetime="'+inputdate+'">'+inputdate+'</time></div>'+
         '</div>'+
     '</div>';
+    document.forms["newCardPriority"]["priority"].selectedIndex=2;
     chosenColumnv.nextElementSibling.insertAdjacentHTML("beforeend",cardhtml);
     $(chosenColumnv.nextElementSibling).sortable({
         connectWith: ".card_section",
