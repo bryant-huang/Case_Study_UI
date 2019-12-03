@@ -193,7 +193,10 @@ function addNewCard(){
         '</div>'+
     '</div>';
     chosenColumnv.nextElementSibling.insertAdjacentHTML("beforeend",cardhtml);
-    $(".card_section").sortable("refresh");
+    $(chosenColumnv.nextElementSibling).sortable({
+        connectWith: ".card_section",
+        containment:"window"
+    }).disableSelection();
     $(chosenColumnv.nextElementSibling.children[chosenColumnv.nextElementSibling.children.length-1].children[0].children[2]).click(function() {
     if (confirm( "Are you sure you want to archive this task?")){
         $(this).parent().parent().remove();
@@ -250,7 +253,7 @@ function addNewColumn(){
     document.getElementById("column_section").insertAdjacentHTML("afterbegin",colhtml);
     document.getElementById("column_section").firstChild.style.backgroundColor = inputcolor;
     $("#column_section").sortable("refresh");
-    $(document.getElementById("column_section").children[document.getElementById("column_section").children.length-1].children[0].children[2].children[0]).click(function() {
+    $(document.getElementById("column_section").children[0].children[0].children[2].children[0]).click(function() {
         if (confirm( "Are you sure you want to archive this column?")){
             $(this).parent().parent().parent().remove();
         }
