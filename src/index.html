@@ -112,7 +112,7 @@
         <div class = "logo_and_title">
             <img src="images/lightbulb.png" id="profile" alt = "Lightbulb" height="60px" vspace="5px" hspace="5px"
             class="icon">
-            <h2 class = "section_title" id = "user_display"><span style="color: red">Template User's </span>Ranking of Places in Madrid</h2>
+            <h2 class = "section_title" id = "user_display"><span style="color: white">PlanIt's</span>Demo Ranking of Places in Madrid</h2>
         </div>
         <div class = "multiple_row" id = "option_buttons">
             <div class="button-clickable" id = "logout">Log Out</div>
@@ -143,9 +143,15 @@
                             <input name="date" type="text">
                             <button type="button" onclick="changeDate()">Save</button>
                         </form>
-                        <h5 class="modal-title" id="exampleModalLabel">Edit image</h5>
-                        <form name="editCardImage">
-                            <input name="image" type="text">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit priority</h5>
+                        <form name="editCardPriority">
+                            <select name="priority">
+                                <option value="red">Very high! (Red)</option>
+                                <option value="yellow">High. (Yellow)</option>
+                                <option value="orange" selected>Medium. (Orange)</option>
+                                <option value="green">Low. (Green)</option>
+                                <option value="blue">Not a priority. (Blue)</option>
+                            </select>
                             <button type="button" onclick="changeImage()">Save</button>
                         </form>
                         <br>
@@ -170,8 +176,14 @@
                             <input name="name" type="text">
                         </form>
                         <h5 class="modal-title" id="exampleModalLabel">Image link</h5>
-                        <form name="newCardImage">
-                            <input name="image" type="text">
+                        <form name="newCardPriority">
+                            <select name="priority">
+                                <option value="red">Very high! (Red)</option>
+                                <option value="yellow">High. (Yellow)</option>
+                                <option value="orange" selected>Medium. (Orange)</option>
+                                <option value="green">Low. (Green)</option>
+                                <option value="blue">Not a priority. (Blue)</option>
+                            </select>
                         </form>
                         <h5 class="modal-title" id="exampleModalLabel">Date and time (current time by default)</h5>
                         <form name="newCardDate">
@@ -199,11 +211,6 @@
                             <input name="name" type="text">
                         </form>
                         <br>
-                        <h5 class="modal-title" id = "exampleModalLabel">Color Priority</h5>
-                        <form name="newColColor">
-                            <input name="color" type="color" value="#383be3">
-                        </form>
-                        <br>
                         <button onclick="addNewColumn()" data-toggle="modal" data-target="#colModal">Confirm</button>
                     </div>
                 </div>
@@ -215,7 +222,7 @@
         <div id="column_section">
             <div class="column">
                 <div class = "col_title_and_hamburger">
-                    <h3 class="section_title">Favorite Places</h3>
+                    <h3 class="section_title">Work Tasks</h3>
                     <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
                         <img src="images/hamburger.png" alt = "Hamburger" height = "60px" class="hamburger">
                     </button>
@@ -231,8 +238,8 @@
                 <div class = "card_section" id = "left_card_section">
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/templo.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Templo de Debod</div>
+                            <img src="images/red.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Fix Powerpoint Deck</div>
                             <button id = "exit_button" class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
@@ -268,8 +275,8 @@
                     </div>
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/retiro.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Parque de Retiro</div>
+                            <img src="images/orange.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Call with Dave</div>
                             <button class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
@@ -286,8 +293,8 @@
                     </div>
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/chap.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">El Chapandaz</div>
+                            <img src="images/red.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Write Python script.</div>
                             <button class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
@@ -304,8 +311,8 @@
                     </div>
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/rastro.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">El Rastro</div>
+                            <img src="images/yellow.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Follow up w/ Karen.</div>
                             <button class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
@@ -322,8 +329,8 @@
                     </div>
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/granvia.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Gran Via</div>
+                            <img src="images/blue.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Holiday Party!</div>
                             <button class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
@@ -342,7 +349,7 @@
             </div>
             <div class="column">
                 <div class = "col_title_and_hamburger">
-                    <h3 class="section_title">Ok Places</h3>
+                    <h3 class="section_title">Home Tasks</h3>
                     <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
                         <img src="images/hamburger.png" alt = "Hamburger" height = "60px" class="hamburger">
                     </button>
@@ -358,8 +365,8 @@
                 <div class = "card_section" id = "middle_card_section">
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/cienmont.png" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">100 Montaditos</div>
+                            <img src="images/green.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Do laundry (big load).</div>
                             <button class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
@@ -375,8 +382,8 @@
                     </div>
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/corte.gif" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">El Corte Ingles</div>
+                            <img src="images/red.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Pick up Sam!</div>
                             <button class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
@@ -395,7 +402,7 @@
             </div>
             <div class="column">
                 <div class = "col_title_and_hamburger">
-                    <h3 class="section_title">Worst Places</h3>
+                    <h3 class="section_title">Coding Club Tasks</h3>
                     <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
                         <img src="images/hamburger.png" alt = "Hamburger" height = "60px" class="hamburger">
                     </button>
@@ -411,8 +418,8 @@
                 <div class = "card_section" id = "right_card_section">
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/reina.png" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Reina Sofia</div>
+                            <img src="images/yellow.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Buy new CPU.</div>
                             <button class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
@@ -428,8 +435,8 @@
                     </div>
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/palacio.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Palacio Real</div>
+                            <img src="images/red.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Fix HTML bug.</div>
                             <button class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
@@ -445,8 +452,8 @@
                     </div>
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/sanmiguel.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Mercado de San Miguel</div>
+                            <img src="images/blue.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Snacks?</div>
                             <button class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
@@ -462,8 +469,8 @@
                     </div>
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/madridaero.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Aeropuerto de Madrid</div>
+                            <img src="images/green.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Meeting on Tuesday</div>
                             <button class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
@@ -481,7 +488,7 @@
             </div>
             <div class="column">
                 <div class = "col_title_and_hamburger">
-                    <h3 class="section_title">Worst Places</h3>
+                    <h3 class="section_title">Other Things</h3>
                     <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
                         <img src="images/hamburger.png" alt = "Hamburger" height = "60px" class="hamburger">
                     </button>
@@ -497,8 +504,8 @@
                 <div class = "card_section" id = "right_card_section">
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/reina.png" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Reina Sofia</div>
+                            <img src="images/yellow.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Call Kim</div>
                             <button class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
@@ -514,8 +521,8 @@
                     </div>
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/palacio.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Palacio Real</div>
+                            <img src="images/red.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Email Mom's caretaker.</div>
                             <button class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
@@ -531,8 +538,8 @@
                     </div>
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/sanmiguel.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Mercado de San Miguel</div>
+                            <img src="images/blue.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Date night on Friday.</div>
                             <button class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
@@ -548,94 +555,8 @@
                     </div>
                     <div class = "card">
                         <div class="logo_and_title">
-                            <img src="images/madridaero.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Aeropuerto de Madrid</div>
-                            <button class="exit_button">X</button>
-                        </div>
-                        <div class = "card_icons">
-                            <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
-                                <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
-                            </button>
-                            <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
-                            <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
-                            <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
-                            </button>
-                            <div class = "date"><time datetime="20/10/2019 12:50">20/10/2019 12:50</time></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class = "col_title_and_hamburger">
-                    <h3 class="section_title">Worst Places</h3>
-                    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
-                        <img src="images/hamburger.png" alt = "Hamburger" height = "60px" class="hamburger">
-                    </button>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                        <li class = "archive" role="presentation"><a role="menuitem" tabindex="-1" href="#">Archive List</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>
-                        <li role="presentation" class="divider"></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Do Nothing</a></li>
-                    </ul>
-                </div>
-                <button class = "addNewTaskButton" onclick="chosenColumn(this)" data-toggle="modal" data-target="#cardModal">Add New Task!</button>
-                <div class = "card_section" id = "right_card_section">
-                    <div class = "card">
-                        <div class="logo_and_title">
-                            <img src="images/reina.png" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Reina Sofia</div>
-                            <button class="exit_button">X</button>
-                        </div>
-                        <div class = "card_icons">
-                            <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
-                                <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
-                            </button>
-                            <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
-                            <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
-                            <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
-                            </button>
-                            <div class = "date"><time datetime="17/10/2019 12:35">17/10/2019 12:35</time></div>
-                        </div>
-                    </div>
-                    <div class = "card">
-                        <div class="logo_and_title">
-                            <img src="images/palacio.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Palacio Real</div>
-                            <button class="exit_button">X</button>
-                        </div>
-                        <div class = "card_icons">
-                            <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
-                                <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
-                            </button>
-                            <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
-                            <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
-                            <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
-                            </button>
-                            <div class = "date"><time datetime="18/10/2019 12:40">18/10/2019 12:40</time></div>
-                        </div>
-                    </div>
-                    <div class = "card">
-                        <div class="logo_and_title">
-                            <img src="images/sanmiguel.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Mercado de San Miguel</div>
-                            <button class="exit_button">X</button>
-                        </div>
-                        <div class = "card_icons">
-                            <button type="button" class="btn-1" data-toggle="modal" data-target="#editModal">
-                                <img src="images/edit.png" onclick="editCard(this)" alt = "edit" height="30px" vspace="5px" hspace="5px" class="icon">
-                            </button>
-                            <img src="images/like.png" alt = "like" height="30px" vspace="5px" hspace="5px" class="icon">
-                            <img src="images/comment.png" alt = "comment" height="30px" vspace="5px" hspace="5px" class="icon">
-                            <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal"><img src="images/share.png" alt = "share" height="30px" vspace="5px" hspace="5px" class="icon">
-                            </button>
-                            <div class = "date"><time datetime="19/10/2019 12:45">19/10/2019 12:45</time></div>
-                        </div>
-                    </div>
-                    <div class = "card">
-                        <div class="logo_and_title">
-                            <img src="images/madridaero.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
-                            <div class = "section_title card_title">Aeropuerto de Madrid</div>
+                            <img src="images/orange.jpg" alt = "Lightbulb" height="50px" vspace="5px" hspace="5px">
+                            <div class = "section_title card_title">Turn in UI HW.</div>
                             <button class="exit_button">X</button>
                         </div>
                         <div class = "card_icons">
