@@ -41,6 +41,9 @@
     <div style="display: flex">
         <h3 style="margin-top: 6px; margin-left: 6px; color:#38e3e0 ">Start your planning journey today:</h3>
         <button class = "button-clickable" onclick="directToSignUp()" style="width: 68vw; margin-left: 25px">Sign up here, it's free!</button>
+        <button class = "button-clickable" onclick="showCookies()" style="width: 68vw; margin-left: 25px">Show
+            Cookies</button>
+
     </div>
     <br>
     <button onclick ="directToMain()" style="width: 10vw">Go to Main</button>
@@ -52,8 +55,6 @@
             <a class="linkcell leftborder" href="http://www.twitter.com"> Visit our Twitter!  </a>
         </div>
     </div>
-    </div>
-    <br> <br> <br>
 </div>
 <div id="sign_up_screen" style = "display : none">
     <div class="body_logged_out" style="height: fit-content">
@@ -74,12 +75,14 @@
         <input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
         title="name@domain.extension">
         <br>Date of Birth<br>
-        <input type="text" name="birthday" placeholder="dd/mm/yyyy" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" required title = "dd/mm/yyyy">
+        <input type="text" id = "birthday" name="birthday" placeholder="dd/mm/yyyy"
+               pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" required title = "dd/mm/yyyy">
         <br><br>
         <div>
             <br>
             <div>
                 <p><input type="checkbox" name="terms" required> I accept the <u>Terms and Conditions</u></p>
+                <button onclick="directToNonReg()">Back</button>
                 <button class="save_new_user" id="save_new_user">Save</button>
                 <button class="delete">Delete</button>
             </div>
@@ -92,14 +95,15 @@
     <form>
         <h5>Login</h5>
         Email<br>
-        <input type="text" name="email">
+        <input type="text" name="loginemail">
         <br>
         Password:<br>
-        <input type="text" name="password">
+        <input type="text" name="loginpassword">
         <br><br>
+        <button onclick="directToNonReg()">Back</button>
         <button class="login" id="login" type="submit">Log In</button>
         </form>
-    </div>;
+    </div>
 </div>
 <div id="main_profile" style = "display : none">
     <div id = "header_section">
@@ -128,14 +132,19 @@
                     </div>
                     <div class="modal-body">
                         <h5 class="modal-title" id="exampleModalLabel">Edit name</h5>
-                        <form name="newCardName">
+                        <form name="editCardName">
                             <input name="name" type="text">
                             <button type="button" onclick="changeName()">Save</button>
                         </form>
                         <h5 class="modal-title" id="exampleModalLabel">Edit date</h5>
-                        <form name="newCardDate">
+                        <form name="editCardDate">
                             <input name="date" type="text">
                             <button type="button" onclick="changeDate()">Save</button>
+                        </form>
+                        <h5 class="modal-title" id="exampleModalLabel">Edit image</h5>
+                        <form name="editCardImage">
+                            <input name="image" type="text">
+                            <button type="button" onclick="changeImage()">Save</button>
                         </form>
                         <br>
                         <button onclick="alert('Invited!');">Invite collaborators</button>
@@ -143,7 +152,57 @@
                 </div>
             </div>
         </div>
-        <button class="button-clickable" onclick="addColumn()" style="width:98vw;margin-left: 0vw; margin-top: 1vh; margin-bottom: 1vh">
+        <!--New modal for adding cards to a column-->
+        <div class="modal fade" id="cardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add a new card</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+                        <form name="newCardName">
+                            <input name="name" type="text">
+                        </form>
+                        <h5 class="modal-title" id="exampleModalLabel">Image link</h5>
+                        <form name="newCardImage">
+                            <input name="image" type="text">
+                        </form>
+                        <h5 class="modal-title" id="exampleModalLabel">Date and time (current time by default)</h5>
+                        <form name="newCardDate">
+                            <input name="date" type="text">
+                        </form>
+                        <br>
+                        <button onclick="addNewCard()" data-toggle="modal" data-target="#cardModal">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--New modal for adding columns-->
+        <div class="modal fade" id="colModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add a new column</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="exampleModalLabel">Name</h5>
+                        <form name="newColName">
+                            <input name="name" type="text">
+                        </form>
+                        <br>
+                        <button onclick="addNewColumn()" data-toggle="modal" data-target="#colModal">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="button-clickable" data-toggle="modal" data-target="#colModal" style="width:98vw;margin-left: 0vw; margin-top: 1vh; margin-bottom: 1vh">
             Add Column!
         </button>
         <div id="column_section">
@@ -162,7 +221,7 @@
                     </ul>
                 </div>
                 <br>
-                <button class = "addNewTaskButton" onclick="addNewCard()">Add New Task!</button>
+                <button class = "addNewTaskButton" onclick="chosenColumn(this)" data-toggle="modal" data-target="#cardModal">Add New Task!</button>
                 <div class = "card_section" id = "left_card_section">
                     <div class = "card">
                         <div class="logo_and_title">
@@ -290,7 +349,7 @@
                     </ul>
                 </div>
                 <br>
-                <button class = "addNewTaskButton" onclick="addNewCard()">Add New Task!</button>
+                <button class = "addNewTaskButton" onclick="chosenColumn(this)" data-toggle="modal" data-target="#cardModal">Add New Task!</button>
                 <div class = "card_section" id = "middle_card_section">
                     <div class = "card">
                         <div class="logo_and_title">
@@ -344,7 +403,7 @@
                     </ul>
                 </div>
                 <br>
-                <button class = "addNewTaskButton" onclick="addNewCard()">Add New Task!</button>
+                <button class = "addNewTaskButton" onclick="chosenColumn(this)" data-toggle="modal" data-target="#cardModal">Add New Task!</button>
                 <div class = "card_section" id = "right_card_section">
                     <div class = "card">
                         <div class="logo_and_title">
@@ -431,7 +490,7 @@
                     </ul>
                 </div>
                 <br>
-                <button class = "addNewTaskButton" onclick="addNewCard()">Add New Task!</button>
+                <button class = "addNewTaskButton" onclick="chosenColumn(this)" data-toggle="modal" data-target="#cardModal">Add New Task!</button>
                 <div class = "card_section" id = "right_card_section">
                     <div class = "card">
                         <div class="logo_and_title">
@@ -518,7 +577,7 @@
                     </ul>
                 </div>
                 <br>
-                <button class = "addNewTaskButton" onclick="addNewCard()">Add New Task!</button>
+                <button class = "addNewTaskButton" onclick="chosenColumn(this)" data-toggle="modal" data-target="#cardModal">Add New Task!</button>
                 <div class = "card_section" id = "right_card_section">
                     <div class = "card">
                         <div class="logo_and_title">
