@@ -157,9 +157,8 @@
 .body_logged_out {
     width: 98vw;
     height: 80vh;
-    border: 1px dashed navy;
     margin: 1vw 1vw 0.5vh;
-    display: flex;
+    display: grid;
     padding: 1vh;
 }
 
@@ -210,6 +209,18 @@ form {
     font-size: 30px;
 }
 
+#sign_up_screen {
+    display: none;
+    background-color: rgba(56,59,227, 1);
+}
 
+form > input {
+    border: #38e3e0 1px solid;
+    width: 33.5vw;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=date]:focus  {
+    background-color: #38e3e0;
+}
 
 

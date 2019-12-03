@@ -101,7 +101,7 @@ function directToMain(){
 }
 
 function directToSignUp(){
-    document.body.style.backgroundColor = "#F7F7F7";
+    document.body.style.backgroundColor = "#3891E3";
     document.getElementById("nonreg").style.display = "none";
     document.getElementById("log_in_screen").style.display = "none";
     document.getElementById("main_profile").style.display = "none";
@@ -109,7 +109,7 @@ function directToSignUp(){
 }
 
 function directToLogIn(){
-    document.body.style.backgroundColor = "#F7F7F7";
+    document.body.style.backgroundColor = "#3891E3";
     document.getElementById("nonreg").style.display = "none";
     document.getElementById("main_profile").style.display = "none";
     document.getElementById("sign_up_screen").style.display = "none";
