@@ -4,11 +4,13 @@
     border: 1px solid black;
     display: inline-flex;
     margin-top: 5px;
+    border: #38e3e0 1px solid;
 }
 
 .logo_and_title {
     display: inline-flex;
     width: 100%;
+    background-color: white;
 }
 
 .multiple_row {
@@ -73,6 +75,7 @@
     padding: 5px;
     background-color: black;
     width: 98vw;
+    border: #38e3e0 1px solid;
 
 }
 
@@ -198,7 +201,7 @@ form {
     text-align: center;
     font-size: 1em;
     display: inline-block;
-    width:inherit;
+    width: 26vw;
     border-radius: 3px;
     margin-left: auto;
     margin-right: auto;
@@ -223,4 +226,22 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, inp
     background-color: #38e3e0;
 }
 
+#option_buttons {
+    background-color: rgba(56,59,227, 1);
+}
 
+#top_top {
+    background-color: rgba(56,59,227, 1);
+}
+
+#logout, #settings, #register {
+    background-color: #3891E3;
+}
+
+#user_display {
+    color: #38e3e0;
+}
+
+.section_title:not(.card_title) {
+    color: #3891E3;
+}
