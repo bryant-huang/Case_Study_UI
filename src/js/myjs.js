@@ -92,6 +92,7 @@ function deleteInfo(){
     $("input[name=birthday]").val("");
 }
 
+//directs user to main page
 function directToMain(){
     document.body.style.backgroundColor = "#3891E3";
     document.getElementById("log_in_screen").style.display = "none";
@@ -100,6 +101,7 @@ function directToMain(){
     document.getElementById("main_profile").style.display = "block";
 }
 
+//directs user to sign up page
 function directToSignUp(){
     document.body.style.backgroundColor = "#3891E3";
     document.getElementById("nonreg").style.display = "none";
@@ -108,6 +110,7 @@ function directToSignUp(){
     document.getElementById("sign_up_screen").style.display = "block";
 }
 
+//direct user to login page
 function directToLogIn(){
     document.body.style.backgroundColor = "#3891E3";
     document.getElementById("nonreg").style.display = "none";
@@ -116,6 +119,7 @@ function directToLogIn(){
     document.getElementById("log_in_screen").style.display = "block";
 }
 
+//direct user to non reg user page
 function directToNonReg(){
     document.body.style.backgroundColor = "#3891E3";
     document.getElementById("nonreg").style.display = "block";
@@ -168,6 +172,7 @@ function changeDate(){
     document.forms["editCardDate"]["date"].value="";
 }
 
+//change the image of the card
 function changeImage(){
     var newimg=document.forms["editCardPriority"]["priority"].value;
     edittedCard.parentNode.parentNode.previousElementSibling.children[0].src=priority(newimg);
@@ -178,6 +183,7 @@ function chosenColumn(clicked){
     chosenColumnv=clicked;
 }
 
+//switch cases for priority based on user input
 function priority(prio){
     switch(prio){
         case "red":
@@ -195,6 +201,7 @@ function priority(prio){
     }
 }
 
+//add additional card for a task to the UI
 function addNewCard(){
     var inputname=document.forms["newCardName"]["name"].value;
     var inputprio=document.forms["newCardPriority"]["priority"].value;
@@ -266,6 +273,7 @@ function addNewCard(){
     });
 }
 
+//add an entire new column to the interface (for a category)
 function addNewColumn(){
     var inputname=document.forms["newColName"]["name"].value;
     var colhtml='<div class="column">'+
