@@ -23,7 +23,7 @@ function save_new_user(){
         console.log(document.cookie);
         document.getElementById("sign_up_screen").style.display = "none";
         directToMain();
-        document.getElementById("user_display").innerHTML = getCookie("username") + "'s Ranking of Places in Madrid";
+        document.getElementById("user_display").innerHTML = getCookie("username") + "'s Tasks";
         document.getElementById("profile").src = "images/bryantadam.jpeg";
     }
 }
